@@ -9,7 +9,7 @@
 
   <groupId>com.hotels</groupId>
   <artifactId>avro-compatibility</artifactId>
-  <version>2.1.6-SNAPSHOT</version>
+  <version>2.1.6</version>
   <name>Avro compatibility API</name>
   <description>A user friendly API for checking for and reporting on Avro schema incompatibilities.</description>
   <inceptionYear>2017</inceptionYear>
