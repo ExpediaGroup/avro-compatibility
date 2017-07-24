@@ -1,0 +1,36 @@
+# Eclipse files
+.classpath
+.settings
+.project
+.springBeans
+
+# Checkstyle, findbugs and other eclipse plugins
+*/.checkstyle
+*/.fbExcludeFilterFile
+*/.factorypath
+*/.apt_generated/
+
+# Jenv configuration
+.java-version
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Netbeans files
+nbactions.xml
+
+# Maven target folder
+target/
+bin/
+
+# MAC stuff
+.DS_Store
+
+# Generated pom
+core/dependency-reduced-pom.xml
+
+# Build script log
+/build.log
+

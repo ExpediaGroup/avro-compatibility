@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.hotels</groupId>
+    <artifactId>hotels-oss-parent</artifactId>
+    <version>1.2.0</version>
+  </parent>
+
+  <groupId>com.hotels</groupId>
+  <artifactId>avro-compatibility</artifactId>
+  <version>2.0.4-SNAPSHOT</version>
+  <name>Avro compatibility API</name>
+  <description>A user friendly API for checking for and reporting on Avro schema incompatibilities.</description>
+  <inceptionYear>2017</inceptionYear>
+
+  <scm>
+    <connection>scm:git:git@github.com:HotelsDotCom/avro-compatibility.git</connection>
+    <developerConnection>scm:git:git@github.com:HotelsDotCom/avro-compatibility.git</developerConnection>
+    <url>https://github.com/HotelsDotCom/avro-compatibility</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <jdk.version>1.7</jdk.version>
+    <avro.version>1.8.2</avro.version>
+    <shade.prefix>com.hotels.avro.compatibility.shaded</shade.prefix>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>20.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <scope>compile</scope>
+      <version>${avro.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <version>4.12</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>2.4.3</version>
+        </plugin>
+        <plugin>
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>${license.maven.plugin.version}</version>
+          <configuration>
+            <!-- excluding files that don't need a header update -->
+            <excludes>
+              <exclude>src/main/java/patched/org/apache/avro/package-info.java</exclude>
+              <exclude>src/main/java/patched/org/apache/avro/SchemaCompatibility.java</exclude>
+              <exclude>src/test/java/com/hotels/avro/compatibility/CompatibilityTest.java</exclude>
+              <exclude>src/test/java/patched/org/apache/avro/*</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <shadedClassifierName>all</shadedClassifierName>
+              <artifactSet>
+                <includes>
+                  <include>com.google.guava:*</include>
+                  <include>org.apache.avro:*</include>
+                  <include>com.thoughtworks.paranamer:*</include>
+                  <include>com.fasterxml.jackson.core:*</include>
+                  <include>org.codehaus.jackson:*</include>
+                  <include>org.slf4j:*</include>
+                  <include>org.xerial.snappy:*</include>
+                  <include>org.tukaani:*</include>
+                </includes>
+              </artifactSet>
+              <relocations>
+                <relocation>
+                  <shadedPattern>${shade.prefix}.</shadedPattern>
+                  <includes>
+                    <include>com.google.**</include>
+                    <include>com.thoughtworks.**</include>
+                    <include>org.codehaus.jackson.**</include>
+                    <include>org.slf4j.**</include>
+                    <include>org.xerial.snappy.**</include>
+                    <include>org.tukaani.**</include>
+                  </includes>
+                </relocation>
+              </relocations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
