@@ -21,6 +21,17 @@
     <tag>HEAD</tag>
   </scm>
 
+  <developers>
+    <developer>
+      <name>Elliot West</name>
+      <id>teabot</id>
+      <email>teabot@gmail.com</email>
+      <timezone>0</timezone>
+      <organization>Hotels.com</organization>
+      <organizationUrl>http://hotels.com</organizationUrl>
+    </developer>
+  </developers>
+
   <properties>
     <jdk.version>1.7</jdk.version>
     <avro.version>1.8.2</avro.version>
