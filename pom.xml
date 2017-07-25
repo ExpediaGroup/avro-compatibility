@@ -35,7 +35,6 @@
   <properties>
     <jdk.version>1.7</jdk.version>
     <avro.version>1.8.2</avro.version>
-    <shade.prefix>com.hotels.avro.compatibility.shaded</shade.prefix>
   </properties>
 
   <dependencies>
