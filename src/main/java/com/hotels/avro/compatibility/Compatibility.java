@@ -15,7 +15,7 @@
  */
 package com.hotels.avro.compatibility;
 
-import static avro.shaded.com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -179,7 +179,10 @@ public final class Compatibility {
   public enum ChronologyType {
     ALL() {
       @Override
-      public ChronologyCompatibilityCheckResult check(CheckType check, Schema toValidate, Iterable<Schema> schemasInOrder) {
+      public ChronologyCompatibilityCheckResult check(
+          CheckType check,
+          Schema toValidate,
+          Iterable<Schema> schemasInOrder) {
         List<CompatibilityCheckResult> results = new ArrayList<>();
         Iterator<Schema> schemas = schemasInOrder.iterator();
         while (schemas.hasNext()) {
@@ -193,7 +196,10 @@ public final class Compatibility {
     },
     LATEST() {
       @Override
-      public ChronologyCompatibilityCheckResult check(CheckType check, Schema toValidate, Iterable<Schema> schemasInOrder) {
+      public ChronologyCompatibilityCheckResult check(
+          CheckType check,
+          Schema toValidate,
+          Iterable<Schema> schemasInOrder) {
         Iterator<Schema> schemas = schemasInOrder.iterator();
         Schema existing = null;
         while (schemas.hasNext()) {
@@ -211,7 +217,10 @@ public final class Compatibility {
     /**
      * @param schemasInOrder existing schemas, latest last.
      */
-    abstract ChronologyCompatibilityCheckResult check(CheckType check, Schema toValidate, Iterable<Schema> schemasInOrder);
+    abstract ChronologyCompatibilityCheckResult check(
+        CheckType check,
+        Schema toValidate,
+        Iterable<Schema> schemasInOrder);
   }
 
   public enum CheckType {
@@ -245,5 +254,5 @@ public final class Compatibility {
   private static SchemaPairCompatibility canRead(Schema writtenWith, Schema readUsing) {
     return SchemaCompatibility.checkReaderWriterCompatibility(readUsing, writtenWith);
   }
-  
+
 }
