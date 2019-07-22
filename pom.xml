@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/HotelsDotCom/avro-compatibility.git</connection>
     <developerConnection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/HotelsDotCom/avro-compatibility.git</developerConnection>
-    <url>https://github.com/HotelsDotCom/beeju</url>
+    <url>https://github.com/HotelsDotCom/avro-compatibility</url>
     <tag>HEAD</tag>
   </scm>  
 
