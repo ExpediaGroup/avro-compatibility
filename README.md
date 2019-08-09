@@ -7,7 +7,7 @@ You can obtain `avro-compatibility` from Maven Central:
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.hotels/avro-compatibility/badge.svg?subject=com.hotels:avro-compatibility)](https://maven-badges.herokuapp.com/maven-central/com.hotels/avro-compatibility) ![GitHub license](https://img.shields.io/github/license/HotelsDotCom/avro-compatibility.svg)
 
 ## Overview
-Although Avro is excellent at determining the compatibility of schemas, it is not very good at reporting the nature and the location of any schema incompatibilities it finds. The community is working on the former ([AVRO-1933](https://issues.apache.org/jira/browse/AVRO-1933)) and we've contributed a patch for the later ([AVRO-2003](https://issues.apache.org/jira/browse/AVRO-2003)). However, these mainly tackle the implementation of features and not how they are surfaced to the user. Rather than supplement or modify any existing Avro APIs (which are already overloaded), `avro-compatibility` introduces an entirely distinct API that leverages these new features.
+Although Avro is excellent at determining the compatibility of schemas, it is not very good at reporting the nature and the location of any schema incompatibilities it finds. Rather than supplement or modify any existing Avro APIs (which are already overloaded), `avro-compatibility` introduces an entirely distinct API that leverages these new features.
 
 ## Features
 #### Incompatibility type detection
@@ -64,7 +64,6 @@ Interrogate the results programmatically with `CompatibilityCheckResult` and `Ch
     );
 
 ## Notes
-* This project relies on as-yet unmerged patches. As a workaround, the code contained in these patches has been copied in to this project (see `org.apache.avro.SchemaCompatibility`). We would hope to remove such duplication should the patches be incorporated into a future version of Avro.
 * The compatibility/evolution rule implementation used by the library supports `aliases`; the implementation accessed via `org.apache.avro.SchemaValidatorBuilder` does not. Exercise care if migrating from one to the other. Note that this isn't something that we've introduced, Avro just happens to contain two implementations of said rules that unfortunately have subtle differences in behaviour. 
 
 ## Prior art

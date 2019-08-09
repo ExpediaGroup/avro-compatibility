@@ -34,7 +34,7 @@
 
   <properties>
     <jdk.version>1.7</jdk.version>
-    <avro.version>1.8.2</avro.version>
+    <avro.version>1.9.0</avro.version>
   </properties>
 
   <dependencies>
@@ -68,10 +68,7 @@
           <configuration>
             <!-- excluding files that don't need a header update -->
             <excludes>
-              <exclude>src/main/java/patched/org/apache/avro/package-info.java</exclude>
-              <exclude>src/main/java/patched/org/apache/avro/SchemaCompatibility.java</exclude>
               <exclude>src/test/java/com/hotels/avro/compatibility/CompatibilityTest.java</exclude>
-              <exclude>src/test/java/patched/org/apache/avro/*</exclude>
             </excludes>
           </configuration>
         </plugin>

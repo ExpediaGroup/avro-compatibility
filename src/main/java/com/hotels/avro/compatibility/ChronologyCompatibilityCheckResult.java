@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2017 Expedia Inc.
+ * Copyright (C) 2017-2019 Expedia, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package com.hotels.avro.compatibility;
 import java.util.Collections;
 import java.util.List;
 
-import patched.org.apache.avro.SchemaCompatibility.Incompatibility;
-import patched.org.apache.avro.SchemaCompatibility.SchemaCompatibilityType;
+import org.apache.avro.SchemaCompatibility.Incompatibility;
+import org.apache.avro.SchemaCompatibility.SchemaCompatibilityType;
 
 import com.hotels.avro.compatibility.Compatibility.CheckType;
 import com.hotels.avro.compatibility.Compatibility.ChronologyType;
