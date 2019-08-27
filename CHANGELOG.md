@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.1.2] - 2019-08-09
+## [2.2.0] - TBD
 ### Changed
  - Update to Avro 1.9.0 from 1.8.2
  - Remove patched Avro code
