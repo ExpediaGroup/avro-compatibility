@@ -9,7 +9,7 @@
 
   <groupId>com.hotels</groupId>
   <artifactId>avro-compatibility</artifactId>
-  <version>2.2.0-SNAPSHOT</version>
+  <version>2.2.0</version>
   <name>Avro compatibility API</name>
   <description>A user friendly API for checking for and reporting on Avro schema incompatibilities.</description>
   <inceptionYear>2017</inceptionYear>
@@ -18,7 +18,7 @@
     <connection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/HotelsDotCom/avro-compatibility.git</connection>
     <developerConnection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/HotelsDotCom/avro-compatibility.git</developerConnection>
     <url>https://github.com/HotelsDotCom/avro-compatibility</url>
-    <tag>HEAD</tag>
+    <tag>avro-compatibility-2.2.0</tag>
   </scm>
 
   <developers>
