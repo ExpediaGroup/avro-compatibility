@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2017 Expedia Inc.
+ * Copyright (C) 2017-2019 Expedia, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,10 @@ import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
 import org.junit.Test;
 
-import patched.org.apache.avro.SchemaCompatibility.SchemaCompatibilityResult;
-import patched.org.apache.avro.SchemaCompatibility.SchemaCompatibilityType;
-import patched.org.apache.avro.SchemaCompatibility.SchemaIncompatibilityType;
-import patched.org.apache.avro.SchemaCompatibility.SchemaPairCompatibility;
+import org.apache.avro.SchemaCompatibility.SchemaCompatibilityResult;
+import org.apache.avro.SchemaCompatibility.SchemaCompatibilityType;
+import org.apache.avro.SchemaCompatibility.SchemaIncompatibilityType;
+import org.apache.avro.SchemaCompatibility.SchemaPairCompatibility;
 
 public class ChronologyCompatibilityCheckResultTest {
 
