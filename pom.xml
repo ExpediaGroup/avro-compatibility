@@ -34,7 +34,7 @@
 
   <properties>
     <jdk.version>1.7</jdk.version>
-    <avro.version>1.9.0</avro.version>
+    <avro.version>1.11.3</avro.version>
   </properties>
 
   <dependencies>
